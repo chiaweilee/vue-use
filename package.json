@@ -1,7 +1,7 @@
 {
   "name": "vue-use",
   "description": "",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "author": "+v <ljw@live.jp>",
   "repository": {
     "type": "git",
@@ -17,7 +17,8 @@
   },
   "keywords": [],
   "dependencies": {
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "animejs": "^2.0.2",
