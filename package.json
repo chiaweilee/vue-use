@@ -1,7 +1,7 @@
 {
   "name": "vue-use",
   "description": "",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "+v <ljw@live.jp>",
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
   "keywords": [],
   "dependencies": {
     "vue": "^2.5.16",
+    "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

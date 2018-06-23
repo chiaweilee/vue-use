@@ -1,15 +1,9 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
-import App from './App.vue'
-
-// import use from '../lib/index'
 import use from '../src/index'
-
-import config from './config/vue/config'
-import components from './config/vue/components'
-import filters from './config/vue/filters'
-import directives from './config/vue/directives'
-import nextTick from './config/vue/nextTick'
+import { config, filters, components, directives, nextTick } from './config/vue'
+import Vuex from './config/vuex'
+import VueRouter from './config/vuerouter'
+import App from './App.vue'
 
 use(Vue, {
   config,
@@ -17,9 +11,8 @@ use(Vue, {
   components,
   directives,
   nextTick,
-  use: [
-    [Vuex, {}]
-  ]
+  VueRouter,
+  Vuex
 })
 
 /* eslint-disable no-new */
