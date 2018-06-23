@@ -10,88 +10,117 @@ npm install vue-use
 
 ## Usage
 
-##### main.js
+#### basic usage
 
-``` ecmascript 6
+```vuejs
 import Vue from 'vue'
-import Vuex from 'vuex'
-
 import use from 'vue-use'
 
-import cap from './filter/cap'
-import hello from './hello.vue'
-
 use(Vue, {
-  config: {
-    ... // Global Config
-  },
   filters: {
-    cap,
     filterA,
     filterB
-    ... // Vue Filter
-  },
-  directives: {
-    directiveA,
-    directiveB,
-    ... // Vue Directive
+    // vue filters
   }
-  nextTick: function () {
-    // Vue nextTick
-  },
-  components: {
-    hello
-    ... // Vue Component
-  },
-  use: {
-    Vuex
-    ... // Vue Use
-  }
+  // more vue-use options see below
 })
 ```
 
-##### App.vue
-
-```vue
-<template>
-  <hello></hello>
-</template>
-
-```
-
-##### hello.vue
-
-```vue
-<template>
-  <label>
-    <input
-      :placeholder="'hi vue-use' | cap"
-      v-focus
-    >
-  </label>
-</template>
-```
-
-### Or
-
-##### try
-
-```vue
+```vuejs
 import Vue from 'vue'
-import {use, useConfig, useFilters, useComponents, useDirectives, useNextTick} from 'vue-use'
+import {useConfig, useFilters, useComponents, useDirectives, useNextTick} from 'vue-use'
 useFilters(Vue, {
   filterA,
-  filterB,
-  ...
+  filterB
+  // vue filters
 })
-useNextTick(Vue, function () {})
 ```
 
-## Vue Doc
+#### Vue Filters
 
-- Global Config https://vuejs.org/v2/api/#Global-Config
-- Components https://vuejs.org/v2/guide/components.html
-- Filters https://vuejs.org/v2/guide/filters.html
-- nextTick https://vuejs.org/v2/api/#Vue-nextTick
-- Directives https://vuejs.org/v2/api/#Vue-directive
-- Vue.use https://vuejs.org/v2/api/#Vue-use
+See above..
+
+Vue.Filters https://vuejs.org/v2/guide/filters.html
+
+#### Vue Components
+```vue
+use(Vue, {
+  components: {
+    // components
+  }
+})
+```
+
+```vue
+useComponents(Vue, {
+  // components
+})
+```
+
+Vue.Components https://vuejs.org/v2/guide/components.html
+
+#### Vue Directives
+```vue
+use(Vue, {
+  directives: {
+    // directives
+  }
+})
+```
+
+```vue
+useDirectives(Vue, {
+  // directives
+})
+```
+
+Vue.Directives https://vuejs.org/v2/api/#Vue-directive
+
+#### Vue-use Global Config
+
+Vue Global Config https://vuejs.org/v2/api/#Global-Config
+
+```vuejs
+use(Vue, {
+  config: {
+    // below all default value of Vue Global Config
+    silent: false,
+    optionMergeStrategies: {},
+    devtools: process.env.NODE_ENV !== 'production', // Boolean
+    errorHandler: undefined, // function (err, vm, info) // 2.2.0+
+    warnHandler: undefined, // function (msg, vm, trace) // 2.4.0+
+    ignoredElements: [], // 2.5.0+
+    keyCodes: {},
+    performance: false, // 2.2.0+
+    productionTip: false // 2.2.0+
+  }
+})
+```
+
+#### Vue-use.use
+
+equal to Vue.use..
+
+Vue.use https://vuejs.org/v2/api/#Vue-use
+
+```vuejs
+import Vuex from 'vuex'
+import VueToasted from 'vue-toasted'
+use(Vue, {
+  use: [
+    Vuex,
+    [VueToasted, {duration: 3000}]
+  ]
+})
+```
+
+#### Vue-use.nextTick
+
+```vue
+use(Vue, {
+  nextTick: function () {}
+})
+```
+
+Vue.nextTick https://vuejs.org/v2/api/#Vue-nextTick
+

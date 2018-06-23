@@ -6,6 +6,6 @@ export default {
   warnHandler: undefined, // function (msg, vm, trace) // 2.4.0+
   ignoredElements: [], // 2.5.0+
   keyCodes: {},
-  performance: false, // 2.2.0
-  productionTip: false // 2.2.0
+  performance: false, // 2.2.0+
+  productionTip: false // 2.2.0+
 }

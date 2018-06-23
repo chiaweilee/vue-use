@@ -15,7 +15,6 @@ export default (Vue, options) => {
 }
 
 export {
-  use,
   useConfig,
   useFilters,
   useComponents,

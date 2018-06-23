@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import App from './App.vue'
 
-import use from '../lib/index'
-// import use from '../src/index'
+// import use from '../lib/index'
+import use from '../src/index'
 
 import config from './config/vue/config'
 import components from './config/vue/components'
@@ -17,9 +17,9 @@ use(Vue, {
   components,
   directives,
   nextTick,
-  use: {
-    Vuex
-  }
+  use: [
+    [Vuex, {}]
+  ]
 })
 
 /* eslint-disable no-new */
