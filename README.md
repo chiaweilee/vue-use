@@ -164,3 +164,18 @@ use(Vue, {
   }
 })
 ```
+
+#### What Special
+if you use vuex and vue-router in vue-use,
+
+```vue
+use(Vue, {
+  VueRouter: {
+    VueRouter,
+    beforeEach: function (to, from, next, store /* you can get $store here */) {
+      // $store
+      store.commit('something')
+    }
+  }
+})
+```
