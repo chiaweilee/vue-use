@@ -124,3 +124,43 @@ use(Vue, {
 
 Vue.nextTick https://vuejs.org/v2/api/#Vue-nextTick
 
+#### 0.1.8 return
+Now, vue-use will return store and router if you used Vuex or Vue-router
+```vue
+const {store, router} = use(Vue, {
+  VueRouter: {
+    VueRouter,
+     routes: {modules, strict: process.env.NODE_ENV !== 'production', plugins},
+  },
+  Vuex: {
+    Vuex,
+    Store: 
+  }
+  router
+})
+
+new Vue({
+  store,
+  router
+  ...
+})
+```
+
+#### 0.1.8 vue-use.use updated
+
+Now, use can be function
+
+```vue
+use(Vue, {
+  Vuex: {
+    Vuex
+    Store: {...}
+  },
+  use: function ({store, router}) {
+    return [
+      APlugin,
+      [BPlugin, router]
+    ]
+  }
+})
+```
