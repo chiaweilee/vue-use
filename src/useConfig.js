@@ -5,10 +5,12 @@ export default function (Vue, config) {
   if (version[1] >= 5) {
     // ignoredElements 2.5.0
     if (!!config.ignoredElements && config.ignoredElements instanceof Array) Vue.config.ignoredElements = config.ignoredElements // default []
-  } else if (version[1] >= 4) {
+  }
+  if (version[1] >= 4) {
     // warnHandler 2.4.0
     if (!!config.warnHandler && typeof config.warnHandler === 'function') Vue.config.warnHandler = config.warnHandler // default undefined
-  } else if (version[1] >= 2) {
+  }
+  if (version[1] >= 2) {
     // performance 2.2.0
     Vue.config.performance = !!config.performance === true // default false
     // productionTip 2.2.0
