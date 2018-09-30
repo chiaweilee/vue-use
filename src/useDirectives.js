@@ -1,8 +1,8 @@
-import forEach from './forEach'
+import Vue from 'vue'
 
-export default function (Vue, directives) {
-  if (!directives) return
-  forEach(directives, (directive, id) => {
-    if (typeof directive === 'object') Vue.directive(id, directive)
+export default function (directives) {
+  if (typeof directives !== 'object') return
+  Object.keys(directives).forEach(d => {
+    Vue.directive(d, directives[d])
   })
 }

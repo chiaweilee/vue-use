@@ -1,8 +1,8 @@
-import forEach from './forEach'
+import Vue from 'vue'
 
-export default function (Vue, filters) {
-  if (!filters) return
-  forEach(filters, (filter, id) => {
-    if (typeof filter === 'function') Vue.filter(id, filter)
+export default function (filters) {
+  if (typeof filters !== 'object') return
+  Object.keys(filters).forEach(f => {
+    Vue.filter(f, filters[f])
   })
 }

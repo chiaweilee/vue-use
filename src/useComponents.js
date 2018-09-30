@@ -1,8 +1,8 @@
-import forEach from './forEach'
+import Vue from 'vue'
 
-export default function (Vue, components) {
-  if (!components) return
-  forEach(components, (component, id) => {
-    Vue.component(id, component)
+export default function (components) {
+  if (typeof components !== 'object') return
+  Object.keys(components).forEach(c => {
+    Vue.component(c, components[c])
   })
 }
