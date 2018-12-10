@@ -1,5 +1,7 @@
 # vue-use
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/chiaweilee/vue-use.svg)](https://greenkeeper.io/)
+
 <a href="https://npmcharts.com/compare/vue-use?minimal=true"><img src="https://img.shields.io/npm/dm/vue-use.svg" alt="Downloads"></a>
 <a href="https://www.npmjs.com/package/vue-use"><img src="https://img.shields.io/npm/v/vue-use.svg" alt="Version"></a>
 <a href="https://www.npmjs.com/package/vue-use"><img src="https://img.shields.io/npm/l/vue-use.svg" alt="License"></a>
